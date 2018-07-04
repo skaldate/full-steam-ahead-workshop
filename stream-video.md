@@ -63,4 +63,9 @@ _File: /scripts/video.html_
   })
 ```
 
+## After these steps
+* Video should start when you click Play button
+* Video should stream live from camera
+* Video should stop when you click Stop button
+
  
