@@ -1,3 +1,8 @@
+$(document).ready(function(){
+  console.log("Video script loaded");
+  const videoElement = document.getElementById("video");
+  let videoStream;
+
   $("#play").click(function(){
       navigator.mediaDevices.getUserMedia(
         { video: { facingMode: 'user' }
@@ -14,3 +19,5 @@
       videoStream.getTracks()[0].stop();
     }
   })
+
+})
