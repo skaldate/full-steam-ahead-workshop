@@ -1,6 +1,5 @@
 $("#blur").change(function(){
     let blurVal = $(this).val();
-    console.log(blurVal);
     let filterVal =  'blur('+ blurVal + 'px)';
     let filters = $("#video").css('filter');
     
@@ -10,9 +9,7 @@ $("#blur").change(function(){
       filters = ""
     }
     if(blurFilterApplied){
-      console.log("Trying to replace with " + filterVal);
       filters = filters.replace(/blur\(\dpx\)/g, filterVal)
-      console.log("replaced "+ filters);
     }
     else{
       filters = filters+ filterVal;
