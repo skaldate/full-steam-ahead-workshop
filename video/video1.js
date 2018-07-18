@@ -1,11 +1,12 @@
-//video.js - step 1
-  const videoElement = document.getElementById("video"); //video element created in index.html file
-  let videoStream;
 
-//replace this code in step 3 
-  navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' } }) //get user media, select video
-    .then(stream => { //then get the stream of the video
-      videoStream = stream; //store the stream in videostream 
-      videoElement.srcObject = videoStream; //assign the stream to video element's src object.
-      videoElement.play();
+  //get the video element created in index.html file and store it in a variable
+  const videoElement = document.getElementById("video"); 
+
+  navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' } }) //get media on users device, select video
+    .then(stream => { //then get the video stream from device's video camera
+      //assign the stream to video html element's src object. 
+      //This will stream video from camera to the browser
+      videoElement.srcObject = videoStream; 
+      //play the video
+      videoElement.play(); 
    })
