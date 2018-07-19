@@ -7,7 +7,8 @@
     navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' } })
       .then(stream => {       
         //assign the stream to video html element's src object. 
-        videoElement.srcObject = videoStream; 
+        videoElement.srcObject = stream; 
         //play the video
         videoElement.play(); 
    })
+
