@@ -1,4 +1,4 @@
-//when input with id sepia changes
+ //when input with id sepia changes
     $("#sepia").change(function() {
       //get the current value of the sepia slider
       let sepiaVal = $(this).val();
@@ -9,9 +9,11 @@
       let filtersToApply = ""
       
       //determine is sepia filter is already applied
+      
+      //if it is not applied we want to create a filter
       let sepialFilterApplied  = currentFilters.indexOf("sepia(") >= 0;
     
-      //if sepia filter is already applied we want to replace it
+      //if sepia filter is applied we want to replace it
       if(sepialFilterApplied){
         filtersToApply = currentFilters.replace(/sepia\(\d.?\d?\)/g, filterVal);
       }
@@ -24,6 +26,4 @@
       $("#video").css('filter',filtersToApply)
                 .css("-webkit-filter", filtersToApply);
     
-      //apply the filter to the canvas
-      context.filter = filtersToApply;
   })
