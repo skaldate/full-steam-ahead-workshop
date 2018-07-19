@@ -8,14 +8,14 @@ $("#blur").change(function(){
       let filtersToApply = ""
     
       //determine is blur  filter is already applied
-      let blurFilterApplied  = filters.indexOf("blur(") >= 0;
+      let blurFilterApplied  = currentFilters.indexOf("blur(") >= 0;
       if(currentFilters == "none"){
         currentFilters = "";
       }
       
       //if blur filter is already applied we want to replace it
       if(blurFilterApplied){
-        filtersToApply = currentFilters.replace(/blur\(\dpx\)/g, filterVal)
+        filtersToApply = currentFilters.replace(/blur\(\d\d?px\)/g, filterVal)
       }
       //if it is not applied we want to create a filter
       else{
@@ -25,6 +25,5 @@ $("#blur").change(function(){
       //apply the filter to the video
       $("#video").css('filter',filtersToApply)
                 .css("-webkit-filter", filtersToApply);
-      //apply the filter to the video
-      context.filter = filtersToApply;
+      
   })
