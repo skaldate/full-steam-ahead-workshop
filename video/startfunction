@@ -1,0 +1,16 @@
+function startVideo(videoElement){
+    //get media on users device, select video
+      navigator.mediaDevices.getUserMedia(
+        //then get the video stream from device's video camera 
+        { video: { facingMode: 'user' }
+      })
+      .then(stream => {
+        //assign the stream to video html element's src object. 
+        videoElement.srcObject = stream;
+        //save the stream in variable videostream 
+        //we want to save it so that we can close it later
+        //play the video
+        videoElement.play(); 
+        
+      });
+};
