@@ -11,6 +11,8 @@ $(document).ready(function(){
   $("#stop").click(function(){
       stopVideo(videoElement);
   });
+  
+  //Add the code to change facingMode
 
 });
 
