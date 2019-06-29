@@ -1,6 +1,4 @@
-
-$( document ).ready(function() {
-  // get canvas element we created in index.html
+// get canvas element we created in index.html
   let canvas=document.querySelector('canvas');
   // get 2d context of the canavs.
   // it provides function to draw 2d images on canvas
@@ -33,4 +31,3 @@ $( document ).ready(function() {
     document.body.appendChild(newImg); // add to end of your document
      
   });
-})
