@@ -1,4 +1,6 @@
-// get canvas element we created in index.html
+
+$( document ).ready(function() {
+  // get canvas element we created in index.html
   let canvas=document.querySelector('canvas');
   // get 2d context of the canavs.
   // it provides function to draw 2d images on canvas
@@ -22,5 +24,13 @@
     //draw the image on canvas
     //image to draw is in element with id video
     context.drawImage(video,0,0,canvas.width,canvas.height);
+    let url = canvas.toDataURL();
+
+    let newImg = document.createElement("img"); // create img tag
+    newImg.src = url;
+    newImg.filter = $("#video").css('filter');
+    newImg.style.webkitFilter = $("#video").css('filter');
+    document.body.appendChild(newImg); // add to end of your document
      
   });
+})
